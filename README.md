@@ -1,21 +1,43 @@
-# super-hello-world 🌈
+# super-hello-world
 
-โปรเจกต์เว็บแอปพลิเคชันสายรุ้งแบบอินเทอร์แอคทีฟ (Interactive Rainbow Hello World) พร้อมโฮสต์ผ่าน GitHub Pages
+Interactive Rainbow Hello World web app with Web Audio chimes, customizable text, themes, confetti, and offline PWA support.
 
-## 🌐 เข้าชมเว็บไซต์ (Live Demo)
-👉 **[https://okayokay101.github.io/super-hello-world/](https://okayokay101.github.io/super-hello-world/)**
+[Live demo](https://okayokay101.github.io/super-hello-world/)
 
----
+![Super Rainbow Hello World screenshot](docs/images/screenshot.png)
 
-## ✨ ฟีเจอร์เด่นทั้ง 10 รายการ (Features)
+[ภาษาไทย](README_TH.md) · **English**
 
-1. **Live Text Customizer**: พิมพ์เปลี่ยนข้อความ "Hello, World!" ได้แบบเรียลไทม์ พร้อมเลือกฟอนต์สวยงามจาก Google Fonts (Kanit, Poppins, Montserrat, Fredoka)
-2. **Web Audio Chimes**: สังเคราะห์เสียงตัวโน้ตดนตรี 7 สี (Do-Re-Mi-Fa-Sol-La-Ti) เมื่อเลื่อนเมาส์ผ่าน (Hover) หรือคลิกที่เส้นรุ้งแต่ละเส้น
-3. **Cursor Sparkle Trail**: ละอองดาวระยิบระยับสีรุ้งโปรยปรายตามตำแหน่งเคอร์เซอร์เมาส์หรือการสัมผัสหน้าจอ
-4. **Day / Night / Rainy Themes**: สลับบรรยากาศหน้าเว็บได้ 4 สไตล์ (Dark, Day Sky, Starry Night, และ Rainy Rainbow)
-5. **Color Palette Presets**: ปรับเปลี่ยนพาเลตต์สีรุ้งได้ทั้ง Classic, Pastel, Neon Cyberpunk, และ Gold
-6. **Confetti Celebration Mode**: ยิงพลุกระดาษเฉลิมฉลองพร้อมเสียงคอร์ดระนาดสายรุ้งเมื่อคลิกที่ตัวหนังสือ ก้อนเมฆ หรือปุ่ม Celebrate
-7. **Snapshot & Share via URL**: บันทึกการ์ดคำอวยพรเป็นภาพ PNG ความละเอียดสูง และแชร์ข้อความส่วนตัวผ่าน URL Parameter เช่น `?msg=YourMessage`
-8. **Floating Controls & Fullscreen**: แถบควบคุมปรับความเร็วแอนิเมชัน และปุ่มขยายหน้าจอเต็มจอสำหรับตั้งโชว์
-9. **Accessibility & Social Meta Tags**: รองรับ `@media (prefers-reduced-motion)` เพื่อลดการเคลื่อนไหว และใส่ Open Graph / Twitter Card สำหรับพรีวิวบนโซเชียล
-10. **PWA & Offline Support**: ติดตั้งเป็นเว็บแอปพลิเคชันลงบนหน้าจอมือถือ/แท็บเล็ตได้ พร้อมใช้งานแบบออฟไลน์ผ่าน Service Worker
+## Features
+
+### Text and audio
+- **Live text customizer:** edit the headline in real time and pick Google Fonts (`Kanit`, `Poppins`, `Montserrat`, `Fredoka`).
+- **Web Audio chimes:** play Do–Re–Mi–Fa–Sol–La–Ti notes by hovering or clicking the seven rainbow arcs.
+- **Confetti and sparkle trail:** trigger confetti bursts on click or with the Celebrate button, plus a cursor sparkle trail.
+
+### Look and sharing
+- **Themes and palettes:** switch between 4 themes (Dark, Day Sky, Starry Night, Rainy) and 4 color palettes (Classic, Pastel, Neon, Gold).
+- **Snapshot and share:** download a PNG card, share custom text via `?msg=YourMessage`, and toggle fullscreen or animation speed.
+- **PWA and accessibility:** offline caching via [`sw.js`](sw.js), [`manifest.json`](manifest.json), and `prefers-reduced-motion` support.
+
+## Requirements
+
+- Any modern desktop or mobile browser with Web Audio API and Canvas support
+- Python 3 (or any static HTTP server) when running locally so [`sw.js`](sw.js) can register
+
+## Setup
+
+```bash
+git clone https://github.com/OkayOkay101/super-hello-world.git
+cd super-hello-world
+python -m http.server 8000
+```
+
+Open `http://localhost:8000` in your browser. Serving over HTTP ensures the Service Worker (`sw.js`) registers properly.
+
+## Project layout
+
+- `index.html`: complete app markup, styles, and interactive JavaScript
+- `manifest.json`: PWA web app manifest
+- `sw.js`: Service Worker for offline caching
+- `docs/images/screenshot.png`: main interface screenshot
